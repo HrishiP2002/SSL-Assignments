@@ -1,0 +1,136 @@
+\documentclass{beamer}[10pt]
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{ shapes, arrows, calc, positioning}
+\usetheme{Warsaw}
+
+\tikzstyle{boxes} = [rectangle, minimum width=3 cm , minimum height = 1 cm, text centered , draw=black, fill=orange!30]
+
+
+
+
+
+\title{\textrm{Assignment-2}}
+\subtitle{\textrm{Software Systems Lab}}
+\author{\textrm{Hrishikesh Pable }}
+\institute{IIT Dharwad \\
+\href{https://www.iitdh.ac.in/}{\texttt{https://www.iitdh.ac.in/}}}
+\date{August 11, 2021}
+
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{Sample Frame Title}
+%This is some text in the first frame of this latex presentation which is a part of %an assignment given to us under the ssl laboratory course.
+    
+%\end{frame}
+
+\begin{frame}{Dynamic Programming}
+\begin{itemize}
+    \item Characteristics of Dynamic Programming
+    \begin{enumerate}
+        \item Overlapping Sub-problems
+        \begin{block}{1}
+            Subproblems are smaller versions of the original problem. Any problem has overlapping sub-problems if finding its solution involves solving the same subproblem multiple times.
+        \end{block}
+        \begin{block}{2}
+            Any problem has optimal substructure property if its overall optimal solution can be constructed from the optimal solutions of its subproblems.
+        \end{block}
+    \end{enumerate}
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{DP Methods}
+
+\begin{itemize}
+    \item \textbf{Top-down with Memoization}
+    \begin{block}{1}
+    In this approach, we try to solve the bigger problem by recursively finding the solution to smaller sub-problems. Whenever we solve a sub-problem, we cache its result so that we don’t end up solving it repeatedly if it’s called multiple times. Instead, we can just return the saved result.
+
+    \end{block}
+    
+    \item <2-> \textbf{Bottom-up with Tabulation}
+    \begin{alertblock}{2}
+    Tabulation is the opposite of the top-down approach and avoids recursion. In this approach, we solve the problem “bottom-up” (i.e. by solving all the related sub-problems first).
+
+    
+    \end{alertblock}
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Algorithms}
+\label{Algorithms}
+\setbeamercovered{transparent}
+\begin{itemize}
+    \item Divide and conquer \pause
+    \item Greedy Algorithm \pause
+    \item Dynamic Programming 
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Divide and Conquer}
+\only<1>
+{Example:\\
+\textbf{Quick-Sort:The average case run time of quick sort is} $O(n*\log n)$\textbf{.This case happens when we don't exactly \\ get evenly balanced partitions.}}
+
+\only<2>
+{\textcolor{red}{Example:} \\
+Merge-Sort:\textcolor{orange}{The time complexity of Merge Sort is $O(n*\log n)$.Merge Sort is useful for sorting linked lists in $O(n*\log n)$ time.}}
+    
+\end{frame}
+
+\begin{frame}{Hyperlinks}
+\begin{itemize}
+    \item Divide and Conquer
+    \item \hyperlink{Algorithms}{\beamergotobutton{Greedy Algorithm}}
+    \item \hyperlink{Algorithms}{\beamergotobutton{Dynamic Programming}}
+\end{itemize}
+    
+\end{frame}
+\begin{frame}{List of Data Structures}
+\setbeamercovered{transparent}
+\begin{itemize}
+    \item Primitive \pause
+    \item Non-Primitive
+    
+    \begin{itemize}
+        \item \textit{Linear} \pause
+        \begin{itemize}
+            \item<2-> \textbf{Static}
+            \begin{enumerate}
+                \item<4->{ Array}
+            \end{enumerate}
+            \item<2-> \textbf{Dynamic}
+            \begin{enumerate}
+                \item<4-> Linked List
+                \item<4-> Stack
+                \item<4-> Queue
+            \end{enumerate}
+        \end{itemize}
+        \item<5-> Non-Linear
+        \begin{enumerate}
+            \item<5-> Tree
+            \item<5-> Graph
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+    
+\end{frame}
+\begin{frame}{Data Structures}
+
+%\begin{tikzpicture}
+%    \node (ds) [boxes] {Data Structure}
+%    \node (pds) [boxes, below of=ds, xshift=2 cm, yshift=2 cm] {Non-%Primitive Data Structures}
+%\end{tikzpicture}
+    
+\end{frame}
+
+
+
+
+\end{document}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>G.C.D Calculator</title>
+        <style>
+            div {
+                background-color: burlywood;
+                height: 120px;
+                padding: 90px;
+                text-align: center;
+                text-emphasis-color: cyan;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>G.C.D. Calculator</h1>
+
+        <p>Please Enter the two numbers: </p>
+        <label for="n1"><i>First Number:</i></label><br>
+        <input type="text" id="n1"><br>
+        <label for="n2"><i>Second Number</i></label><br>
+        <input type="text" id="n2"><br>
+        <button type="button" onclick=  GCDcalculator() >Calculate GCD</button>
+
+        <div id="result">
+        
+        </div>
+
+        <script type="text/javascript">
+
+        function GCDcalculator()
+        {
+            var x = document.getElementById("n1").value;
+            var y = document.getElementById("n2").value;
+
+            x = Number(x);
+            y = Number(y);
+
+            var min, gcd;
+            (x>y) ? min=y : min=x;
+
+            for(var i=0; i<=min; i++)
+            {
+                if(x%i == 0 && y%i == 0)
+                {
+                    gcd = i;
+                }
+            }
+            
+            document.getElementById("result").innerHTML = "<h2>The Greatest Common Divisor of " + x + " and " + y + " is " + gcd + ".</h2>";
+
+        }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Information</title>
+        <style>
+            table, th, td {
+                            text-align: left;
+                            padding: 4px;
+                            font-size: larger;
+                            
+                            }
+        </style>
+    </head>
+
+    <body>
+        <h1>User Information</h1>
+
+        <p>Please enter your details: </p>
+
+
+        <label for="name">Your name:</label>
+        <input type="text" id="name"><br>
+
+        <label for="address">Your address:</label>
+        <input type="text" id="address"><br>
+
+        <label for="number">Your Phone Number:</label>
+        <input type="number" id="number"><br>
+
+        <label for="email">Your Email:</label>
+        <input type="text" id="email"><br>
+
+        <label for="qual">Your Educational Qualification:</label>
+        <input type="text" id="qual"><br>
+
+        <label for="age">Your Age:</label>
+        <input type="number" id="age"><br>
+
+        <button onclick=Display() id="button">Submit</button>
+
+
+
+        <p id="demo"></p>
+
+
+
+        <Table id="myTable" align="center">
+           
+        </Table>
+
+
+        <script type="text/javascript">
+        
+
+
+       
+
+
+        function Display()
+        {
+            var name ,address, number, emailId, e_qual, age;
+
+            const User = {
+             Name : name,
+             Address : address,
+             Number : number,
+             EmailId : emailId,
+             e_qual : e_qual,
+             Age : age
+           
+             }
+
+        User.Name = document.getElementById("name").value;
+        User.Address = document.getElementById("address").value;
+        User.Number = document.getElementById("number").value;
+        User.EmailId = document.getElementById("email").value;
+        User.e_qual = document.getElementById("qual").value;
+        User.Age = document.getElementById("age").value;
+
+        //     function  User(name,number, address, emailId, e_qual, age)
+        // {
+            //  this.Name = name;
+            //  this.Address = address;
+            //  this.Number = number;
+            //  this.EmailId = emailId;
+            //  this.e_qual = e_qual;
+            //  this.Age = age;
+        // }
+
+        //         var a = document.getElementById("name").value;
+        //         var b = document.getElementById("address").value;
+        //         var c = document.getElementById("number").value;
+        //         var d = document.getElementById("emailId").value;
+        //         var e = document.getElementById("e.qual").value;
+        //         var f = document.getElementById("age").value;
+
+        //     let User1 = new User(a, b, c, d, e, f);
+
+
+            CreateRow(1, "User.Name", User.Name);
+            CreateRow(2, "User.Address", User.Address);
+            CreateRow(3, "User.Phone Number", User.Number);
+            CreateRow(4, "User.EmailID", User.EmailId);
+            CreateRow(5, "User.Educational Qualifications", User.e_qual);
+            CreateRow(6, "User.Age", User.Age);
+
+            document.getElementById("button").disabled =true;
+
+ 
+        }
+
+
+                function  CreateRow(n, x, y)
+                {
+                    var table = document.getElementById("myTable");
+                    var row = table.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = x;
+                    cell2.innerHTML = y;
+
+                    if(n%2==1)
+                    {
+                        cell1.style.backgroundColor = "#aaaaaa";
+                        cell2.style.backgroundColor = "#aaaaaa";
+                    }
+
+                    if(n%2==0)
+                    {
+                        cell1.style.backgroundColor = "#d3d3d3";
+                        cell2.style.backgroundColor = "#d3d3d3";
+                    }
+                  
+                }
+
+                
+            
+        </script>
+
+
+
+    </body>
+</html>

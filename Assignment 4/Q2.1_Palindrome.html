@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Palindrome Detector</title>
+        <style>
+           
+          header {
+               background-color: rgb(102, 102, 102);
+               padding: 30px;
+               text-align: center;
+               font-size: 30px;
+               color: black;
+                 }             
+    
+            nav{
+              float:left;
+              width:38%;
+              background-color: bisque;
+              padding: 30px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              font-size: 20px;
+            }
+    
+            article{
+              float:right;
+              width:55.2%;
+              background-color:burlywood;
+              padding: 20px;
+              height:108px;
+              font-size: 20px;
+              text-align: justify;
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <header>
+                Palindrome Detector
+            </header>
+
+            <section>
+                <nav>
+                    <p>Please enter the string:</p>
+                    <input id="string">
+                    <button type="button", onclick=palCheck()>Submit</button>  
+                </nav>
+
+                <article id="result"></article>
+
+                <script type="text/javascript">
+                    
+                    function palCheck()
+                    {
+                            var x = document.getElementById("string").value;
+        
+                            var y = "";
+        
+                            for(var i=x.length-1; i>=0; i--)
+                            {
+                                y += x[i]
+                           
+                                
+                            }
+
+        
+                            if(x==y)
+                            {
+                                document.getElementById("result").innerHTML = "Yes, it is a Palindrome."
+                            }
+        
+                            else
+                            {
+                                document.getElementById("result").innerHTML = "No, it is not a Palindrome."
+                            }
+
+                    }
+                </script>
+
+            </section>
+        </div>
+
+
+    </body>
+</html>

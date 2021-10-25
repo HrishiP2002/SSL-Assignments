@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Frequency counter</title>
+        <style>
+            div {
+                background-color:cyan;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: larger;
+                padding: 40px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Frequency counter</h1>
+        <p>Please Enter the string in the textbox:</p>
+        <input type="text" id="string"><br>
+        <button type="button" id="tap" onclick=Calculate()>Calculate</button><br>
+
+        <div id="result">
+            <p id="a"></p><br>
+            <p id="b"></p>
+        </div>
+
+        <script type="text/javascript">
+
+
+            
+            function Calculate()
+            {
+                var x = document.getElementById("string").value;
+                const a = Counter(x);
+                var text = "";
+                for(var v=0; v<a.char.length ; v++)
+                {
+                    text += a.char[v] + " ";
+                }
+                document.getElementById("a").innerHTML = "<b><i>Most Frequent Character(s) :</u></i> " + text;
+                document.getElementById("b").innerHTML = "<b><i>Frequency of occurence : </u></i>" + String(a.maxx);
+                
+            }
+
+            
+            function Counter(k)
+            {
+                const Freq = [];
+                const Max = {};
+                Max.maxx = 0;
+                Max.char = [];
+                
+                for(var i=0 ; i<k.length ; i++)
+                {
+                    Freq[i]=1;
+                    for(var j=0 ; j<k.length ; j++)
+                    {
+                        if(i==j)
+                        {
+                            continue;
+                        }
+
+                        if(k[i]==k[j])
+                        {
+                            Freq[i]++;
+                        }
+                    }
+                }
+                var l = 0;
+
+                for(var t=0 ; t<k.length ; t++)
+                {
+                    if(Freq[t]>Max.maxx)
+                    {
+                        Max.maxx = Freq[t];
+                    }
+                }
+
+                for(var h=0 ; h<k.length ; h++)
+                {
+                    if(Freq[h]==Max.maxx)
+                    {
+                        var check=0;
+                        for(var u=0 ; u<l ; u++)
+                        {
+                            if(Max.char[u]==k[h])
+                            {check++;}
+                        }
+                        if(check==0)
+                        {
+                        Max.char[l] = k[h];
+                        l++;
+                        }
+                    }
+                }
+
+                return Max;
+
+                
+            }
+
+            
+
+
+        </script>
+    </body>
+</html>
